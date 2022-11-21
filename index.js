@@ -1,8 +1,11 @@
 import express from 'express';
 import fs from 'fs';
 const app = express();
+import * as dotenv from 'dotenv'; 
+dotenv.config();
 
-const PORT = 4000;
+const PORT = process.env.PORT;
+
 app.get("/", function (request, response) {
   response.send("🙋‍♂️, 🌏 🎊✨🤩 hello");
 });
