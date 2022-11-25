@@ -15,7 +15,7 @@ app.get("/getDateTime", function (request, response) {
   const date = new Date().toDateString();
   const time = new Date().toTimeString();
 
-  fs.writeFile("./backend/date-time.txt", 
+  fs.writeFile(`./backend/${date}.txt`,
                 `Current Date - ${date} \nCurrent Time - ${time}`,
                 (err)=>{
                   if(err) console.log("error occured")
@@ -27,12 +27,12 @@ app.get("/readFiles", function (request, response) {
 
   let folder = "./backend";
   let filenames = fs.readdirSync(folder);
-  
+  let fileList = "files in the directory <br>";
   filenames.forEach((file)=>{
-    console.log("Filename:" , file );
+   fileList += file + "<br>" 
   })
 
-  response.send("All the file names are displayed");
+  response.send(fileList);
 });
 
 

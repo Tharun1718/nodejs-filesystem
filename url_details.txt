@@ -1,0 +1,6 @@
+// api to write a text file
+https://tharunnode-filesystem.herokuapp.com/getDateTime
+
+// api to read a file
+https://tharunnode-filesystem.herokuapp.com/readFiles
+
